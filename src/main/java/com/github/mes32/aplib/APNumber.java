@@ -8,7 +8,7 @@ package com.github.mes32.aplib;
 
 class APNumber {
     //int base; Just assume base 10 for now
-    //NumericPrecision precision;
+    NumericPrecision precision;
     int[] digits;
     int firstFractionalIndex;
 
