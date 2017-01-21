@@ -10,23 +10,23 @@ class NumericPrecision {
     private static final int MAX_PRECISION = 100;  // Maybe too low
     private static final String PRINT_EXACT = "Exact";
 
-    boolean isExact;
-    int precision;
+    private boolean isExact;
+    private int precision;
 
     NumericPrecision() {
         isExact = true;
     }
 
-    APNumber(int precision) {
+    NumericPrecision(int precision) {
         isExact = false;
         this.precision = precision;
     }
 
-    String toString() {
+    public String toString() {
         if (isExact) {
             return PRINT_EXACT;
         } else {
-            return precision;
+            return Integer.toString(precision);
         }
     }
 }

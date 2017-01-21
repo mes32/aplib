@@ -1,0 +1,32 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+//dependencies {
+//    compile group: 'org.apache.pdfbox', name: 'pdfbox', version: '2.0.4'
+//}
+
+jar {
+    baseName = 'APMain'
+    from {
+        configurations.compile.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+
+        configurations.runtime.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+
+    manifest {
+        attributes(
+            'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+            'Main-Class': 'com.github.mes32.aplib.APLibMain'
+        )
+    }
+}

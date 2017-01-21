@@ -7,10 +7,10 @@
 package com.github.mes32.aplib;
 
 class APNumber {
-    //int base; Just assume base 10 for now
-    NumericPrecision precision;
-    int[] digits;
-    int firstFractionalIndex;
+    //private int base; Just assume base 10 for now
+    private NumericPrecision precision;
+    private int[] digits;
+    private int firstFractionalIndex;
 
     APNumber(String strValue) {
 
@@ -20,7 +20,7 @@ class APNumber {
 
     }
 
-    String toString() {
+    public String toString() {
         return "0";
     }
 }
