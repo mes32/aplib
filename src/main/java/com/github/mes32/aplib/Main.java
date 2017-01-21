@@ -1,6 +1,6 @@
 /*
 
-    Main program for project aplib
+    Main.java - aplib
 
  */
 
@@ -8,8 +8,8 @@ package com.github.mes32.aplib;
 
 import java.io.*;
 
-class APLibMain {
+class Main {
     public static void main(String[] args) {
-        System.out.println("In class APLibMain...");
+        System.out.println("In aplib main...");
     }
 }

@@ -12,7 +12,7 @@ dependencies {
 }
 
 jar {
-    baseName = 'APMain'
+    baseName = 'Main'
     from {
         configurations.compile.collect {
             it.isDirectory() ? it : zipTree(it)
@@ -26,7 +26,7 @@ jar {
     manifest {
         attributes(
             'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
-            'Main-Class': 'com.github.mes32.aplib.APLibMain'
+            'Main-Class': 'com.github.mes32.aplib.Main'
         )
     }
 }
