@@ -17,6 +17,7 @@ public class APNumber {
 
     public APNumber(String strValue) throws APNumberParseException {
         precision = new NumericPrecision();
+        digits = new LinkedList<Integer>();
 
         String[] strArray = strValue.split("");
         boolean foundFractionalPoint = false;
@@ -27,16 +28,21 @@ public class APNumber {
                     throw new APNumberParseException(message);
                 } else {
                     foundFractionalPoint = true;
-                    // set firstFractionalIndex
+                    firstFractionalIndex = digits.size();
                 }
             } else {
                 try {
-                    Integer digit = new Integer(token);
+                    Integer newDigit = new Integer(token);
+                    digits.add(newDigit);
                 } catch (NumberFormatException e) {
                     String message = "APNumber could not parse token '" + token + "' as Integer.";
                     throw new APNumberParseException(message, e);
                 }
             }
+        }
+
+        if (!foundFractionalPoint) {
+            firstFractionalIndex = digits.size();
         }
     }
 
@@ -46,6 +52,14 @@ public class APNumber {
     }
 
     public String toString() {
-        return "0";
+        String output = "";
+        for (int i=0; i < digits.size(); i++) {
+            if (i == firstFractionalIndex) {
+                output += "." + digits.get(i).toString();
+            } else {
+                output += digits.get(i).toString();
+            }
+        }
+        return output;
     }
 }
