@@ -35,8 +35,11 @@ public class NumericPrecision {
         return isExact;
     }
 
-    public int getPrecision() {
-        // throws ExactNumericPrecisionException
+    public int getPrecision() throws NotApplicableNumericPrecisionException {
+        if (isExact) {
+            String message = "Exact value implies precision is not applicable.";
+            throw new NotApplicableNumericPrecisionException(message);
+        }
         return precision;
     }
 

@@ -18,7 +18,7 @@ public class NumericPrecisionUnitTests {
     }
 
     @Test
-    public void testValue() throws InvalidNumericPrecisionException {
+    public void testValue() throws InvalidNumericPrecisionException, NotApplicableNumericPrecisionException {
         int value = 5;
         NumericPrecision p = new NumericPrecision(value);
         Assert.assertEquals(value, p.getPrecision());
