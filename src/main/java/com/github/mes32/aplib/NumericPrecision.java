@@ -21,7 +21,7 @@ public class NumericPrecision {
 
     public NumericPrecision(int precision) throws InvalidNumericPrecisionException {
         if (precision < 0) {
-            String message = "Negative numeric precision disallowed.";
+            String message = "Negative numeric precisions not allowed.";
             throw new InvalidNumericPrecisionException(message);
         } else if (precision > MAX_PRECISION) {
             String message = "Numeric precision exceeds maximum allowable.";

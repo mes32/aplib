@@ -24,6 +24,18 @@ public class NumericPrecisionUnitTests {
         Assert.assertEquals(value, p.getPrecision());
     }
 
+    @Test (expected = InvalidNumericPrecisionException.class)
+    public void testValueInvalidHigh() throws InvalidNumericPrecisionException {
+        int value = Integer.MAX_VALUE;
+        new NumericPrecision(value);
+    }
+
+    @Test (expected = InvalidNumericPrecisionException.class)
+    public void testValueInvalidLow() throws InvalidNumericPrecisionException {
+        int value = -99;
+        new NumericPrecision(value);
+    }
+
     @Test
     public void testPrintExact() {
         String printExact = "Exact";
