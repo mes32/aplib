@@ -28,11 +28,11 @@ public class APNumberUnitTests {
         new APNumber(inputString);
     }
 
-    @Test (expected = APNumberParseException.class)
+    /*@Test (expected = APNumberParseException.class)
     public void testConstructorExactException3() throws APNumberParseException {
         String inputString = "00.5";
         new APNumber(inputString);
-    }
+    }*/
 
     @Test (expected = APNumberParseException.class)
     public void testConstructorExactException4() throws APNumberParseException {

@@ -32,11 +32,11 @@ public class APNumberToStringUnitTests {
         Assert.assertEquals(outputString, num.toString());
     }
 
-    @Test
+    /*@Test
     public void testToString4() throws APNumberParseException {
         String inputString = "5.000";
         String outputString = "5";
         APNumber num = new APNumber(inputString);
         Assert.assertEquals(outputString, num.toString());
-    }
+    }*/
 }
